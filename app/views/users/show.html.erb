@@ -10,4 +10,17 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
+
+  <section>
+    <h1><%= facade.header %></h1>
+
+    <% facade.repositories[0..4].each do |repository| %>
+      <ul class="repository">
+        <!-- add url link via repository.url -->
+        <li class="name"><%= link_to "#{repository.name}", repository.url %></li>
+      </ul>
+
+    <% end %>
+
+  </section>
 </section>
