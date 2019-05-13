@@ -11,7 +11,9 @@
     <h1>Bookmarked Segments</h1>
   </section>
 
-
+  <% if current_user.github_token == nil %>
+    <%= button_to 'Connect to GitHub', "/auth/github" , class: "btn btn-primary mb1 bg-teal" %>
+  <% else %>
   <section>
     <h1>Github</h1>
     <h3>Repository's</h3>
@@ -39,5 +41,5 @@
     </ul>
     <% end %>
   </section>
-
+  <% end %>
 </section>
