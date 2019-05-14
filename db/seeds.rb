@@ -120,5 +120,17 @@ m3_tutorial.videos.create!(
   'position' => 6
 )
 
-User.create!(email: 'admin@example.com', first_name: 'Bossy', last_name: 'McBosserton', password: 'password', role: :admin, github_token: ENV['GITHUB_API_KEY'])
-User.create!(email: 'user@example.com', first_name: 'Regular', last_name: 'User', password: 'password', role: :default, github_token: nil)
+test_tutorial_data = {
+  'title' => 'Test Data Engineering - Test',
+  'description' => 'Videos for test.',
+  'thumbnail' => 'https://i.ytimg.com/vi/qMkRHW9zE1c/hqdefault.jpg',
+  'playlist_id' => 'PL1Y67f0xPzdN6C-LPuTQ5yzlBoz2joWa5',
+  'classroom' => true
+}
+test_tutorial = Tutorial.create! test_tutorial_data
+
+
+u1 = User.create!(email: 'admin@example.com', first_name: 'Bossy', last_name: 'McBosserton', password: 'password', role: :admin, github_token: nil, github_id: nil)
+u2 = User.create!(email: 'user@example.com', first_name: 'Regular', last_name: 'User', password: 'password', role: :default, github_token: nil, github_id: nil)
+u3 = User.create!(email: 'test@example.com', first_name: 'Chi', last_name: 'Tasan', password: 'password', role: :default, github_token: nil, github_id: 44073660)
+u4 = User.create!(email: 'ethan@grab.com', first_name: 'Ethan', last_name: 'Grab', password: 'password', role: :default, github_token: nil, github_id: nil)
