@@ -12,6 +12,9 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+    <% current_user.videos.order(tutorial_id: :asc).order(position: :asc).each do |video| %>
+      <h3><%= video.title %></h3>
+    <% end %>
   </section>
 
   <% if facade.user.github_token %>
@@ -30,6 +33,9 @@
       <% facade.followers.each do |follower| %>
       <ul>
         <li class='follower'><%= link_to follower.handle, follower.url %></li>
+        <% if follower.follower_has_account?(facade.user) %>
+        <%= button_to 'Add as Friend', friends_path, method: :post, class: "btn btn-primary mb1 bg-teal", params: {github_id: follower.github_id} %>
+        <% end %>
       </ul>
       <% end %>
     </section>
@@ -39,8 +45,22 @@
       <% facade.following.each do |following| %>
       <ul>
         <li class='follower'><%= link_to following.handle, following.url %></li>
+        <% if following.follower_has_account?(facade.user) %>
+        <%= button_to 'Add as Friend', friends_path, method: :post, class: "btn btn-primary mb1 bg-teal", params: {github_id: following.github_id} %>
+        <% end %>
       </ul>
       <% end %>
     </section>
+
+    <section>
+      <h3>Friends</h3>
+      <% facade.user.friends.each do |friend| %>
+      <ul>
+        <%x = User.find_by(github_id: friend.github_id)%>
+        <li><%= x.first_name + ' ' + x.last_name %></li>
+      <% end %>
+      </ul>
+    </section>
   <% end %>
+
 </section>
