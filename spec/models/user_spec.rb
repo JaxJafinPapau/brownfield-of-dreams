@@ -37,4 +37,14 @@ RSpec.describe User, type: :model do
       expect(user.github_token).to eq(nil)
     end
   end
+
+  describe 'instance methods' do
+    describe 'email_unconfirmed?' do
+      it "returns true if user hasn't confirmed their email" do
+        user = create(:user, status: 0)
+
+        assert(user.email_unconfirmed?)
+      end
+    end
+  end
 end
