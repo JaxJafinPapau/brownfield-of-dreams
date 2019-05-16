@@ -28,14 +28,14 @@ describe 'vister can create an account', :js do
 
     click_on'Create Account'
 
-    expect(current_path).to eq(users_path)
+    expect(current_path).to eq(dashboard_path)
 
     expect(page).to have_content("Logged in as: #{first_name} #{last_name}")
     expect(page).to have_content("This account has not yet been activated. Please check your email.")
 
     user = User.find_by(email: email)
 
-    visit confirm_email_path(user)
+    visit user_confirm_email_path(user)
 
     expect(current_path).to eq(dashboard_path)
 

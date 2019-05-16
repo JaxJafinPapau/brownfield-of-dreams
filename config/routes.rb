@@ -34,13 +34,15 @@ Rails.application.routes.draw do
   get '/auth/github/callback', to: 'users#update'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
-  get '/confirm_email', to: 'users#confirm_email'
+
+  post '/activation', to: 'activation_request#create'
 
   # Is this being used?
   get '/video', to: 'video#show'
 
-  resources :users, only: %i[new create update edit]
-
+  resources :users, only: %i[new create update edit] do
+    get '/confirm_email', to: 'users#confirm_email'
+  end
   resources :friendships, only: %i[new create]
 
   resources :tutorials, only: %i[show index] do
