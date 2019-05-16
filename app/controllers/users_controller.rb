@@ -12,10 +12,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    if user.save
-      session[:user_id] = user.id
-      redirect_to dashboard_path
+    @user = User.create(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      if @user.status == "inactive"
+        flash[:success] = "This account has not yet been activated. Please check your email."
+        render :activate
+      elsif user.status == "active"
+        redirect_to dashboard_path
+      end
     else
       flash[:error] = 'Username already exists'
       render :new
@@ -28,7 +33,7 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def activate
+  def confirm_email
     current_user.update(status: "active")
     redirect_to dashboard_path
   end
