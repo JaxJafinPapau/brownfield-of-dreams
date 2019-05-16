@@ -28,6 +28,11 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def activate
+    current_user.update(status: "active")
+    redirect_to dashboard_path
+  end
+
   private
 
   def user_params
