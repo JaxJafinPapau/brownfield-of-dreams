@@ -18,12 +18,6 @@ Rails.application.routes.draw do
       resources :videos, only: [:create]
     end
     resources :videos, only: %i[edit update destroy]
-
-    namespace :api do
-      namespace :v1 do
-        put 'tutorial_sequencer/:tutorial_id', to: 'tutorial_sequencer#update'
-      end
-    end
   end
 
   get '/login', to: 'sessions#new'
