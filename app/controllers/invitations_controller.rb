@@ -5,7 +5,7 @@ class InvitationsController < ApplicationController
 
   def create
     # github_email = github_data[:email]
-    github_email = 'ethangrab@gmail.com'
+    github_email = 'garb8262@gmail.com'
     UserMailer.github_invite(current_user, github_email).deliver_now
     flash[:notice] = "Successfully sent invite!"
     redirect_to root_url
