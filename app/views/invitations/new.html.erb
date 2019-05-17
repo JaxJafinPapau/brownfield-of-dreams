@@ -1,0 +1,13 @@
+<div class="user-login">
+  <main>
+<h4>Please Enter Github Handle</h4>
+  <section>
+    <%= form_for :invitation, url: invite_path, method: :post do |form| %>
+      <div >
+        <%= form.text_field :github_handle, class: "block col-12 field" %>
+      </div>
+      <%= form.submit 'Send Invite', class: "mt2 btn btn-primary mb1 bg-teal" %>
+    <% end %>
+  </section>
+  </main>
+</div>

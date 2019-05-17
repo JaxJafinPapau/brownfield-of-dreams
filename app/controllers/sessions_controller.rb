@@ -8,6 +8,9 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email])
     if user&.authenticate(params[:session][:password])
+      if user && !user.email_confirmed
+        flash[:error] = "This account has not yet been activated. Please check your email."
+      end
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
