@@ -4,11 +4,15 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    # github_email = github_data[:email]
-    github_email = 'test@gmail.com'
-    UserMailer.github_invite(current_user, github_email).deliver_now
-    flash[:notice] = "Successfully sent invite!"
-    redirect_to root_url
+    if github_data[:email]
+      github_email = github_data[:email]
+      UserMailer.github_invite(current_user, github_email).deliver_now
+      flash[:notice] = "Successfully sent invite!"
+      redirect_to root_url
+    else
+      flash[:notice] = "Github user does not exist or has a private email."
+      redirect_to '/invite'
+    end
   end
 
   private
