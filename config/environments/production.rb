@@ -75,10 +75,11 @@ Rails.application.configure do
     :password => ENV['SENDGRID_PASSWORD'],
     :domain => 'http://fast-wave-23899.herokuapp.com/',
     :address => 'smtp.sendgrid.net',
+    :port => 587
     :authentication => :plain,
     :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { host: "http://fast-wave-23899.herokuapp.com/", port: 587 }
+  config.action_mailer.default_url_options = { host: "http://fast-wave-23899.herokuapp.com/"}
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
