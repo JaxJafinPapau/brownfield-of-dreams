@@ -18,6 +18,12 @@ Rails.application.routes.draw do
       resources :videos, only: [:create]
     end
     resources :videos, only: %i[edit update destroy]
+
+    namespace :api do
+      namespace :v1 do
+        put 'tutorial_sequencer/:tutorial_id', to: 'tutorial_sequencer#update'
+      end
+    end
   end
 
   get '/login', to: 'sessions#new'
@@ -25,18 +31,12 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/dashboard', to: 'users#show'
-  get '/auth/github/callback', to: 'users#update'
-  get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
 
   # Is this being used?
   get '/video', to: 'video#show'
 
-  resources :users, only: %i[new create update edit] do
-    member { get :confirm_email }
-  end
-
-  resources :friendships, only: %i[new create]
+  resources :users, only: %i[new create update edit]
 
   resources :tutorials, only: %i[show index] do
     resources :videos, only: %i[show index]
