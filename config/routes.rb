@@ -35,6 +35,11 @@ Rails.application.routes.draw do
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
 
+  #####github invite
+  get '/invite', to: 'invitations#new'
+  post '/invite', to: 'invitations#create'
+  #####
+
   # Is this being used?
   get '/video', to: 'video#show'
 
