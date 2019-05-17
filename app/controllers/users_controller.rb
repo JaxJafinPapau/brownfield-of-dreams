@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def confirm_email
-    user = User.find_by(confirm_token: params[:id])
+    user = User.find_by(confirm_token: params[:token])
     if user
       user.email_activation
       flash[:success] = "Thank you! Your account is now activated."
