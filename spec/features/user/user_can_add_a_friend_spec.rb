@@ -29,6 +29,8 @@ describe 'as a logged in User with github connected' do
 
         visit dashboard_path
 
+
+
         expect(page).to have_content("Followers")
         expect(page).to have_css(".follower")
 
