@@ -31,12 +31,17 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/dashboard', to: 'users#show'
+  get '/auth/github/callback', to: 'users#update'
   get '/get_started', to: 'get_started#show'
 
   # Is this being used?
   get '/video', to: 'video#show'
 
-  resources :users, only: %i[new create update edit]
+  resources :users, only: %i[new create update edit] do
+    member { get :confirm_email }
+  end
+
+  resources :friendships, only: %i[new create]
 
   resources :tutorials, only: %i[show index] do
     resources :videos, only: %i[show index]
