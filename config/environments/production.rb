@@ -75,7 +75,6 @@ Rails.application.configure do
     :password => ENV['SENDGRID_PASSWORD'],
     :domain => 'http://fast-wave-23899.herokuapp.com/',
     :address => 'smtp.sendgrid.net',
-    :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
   }
