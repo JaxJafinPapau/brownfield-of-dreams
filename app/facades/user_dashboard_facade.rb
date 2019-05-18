@@ -45,7 +45,7 @@ class UserDashboardFacade
 
   private
 
-  #mike specifically told us to memoize in this fashion
+  # mike specifically told us to memoize in this fashion
   # rubocop:disable Naming/MemoizedInstanceVariableName
   def repository_data
     @_repository_data ||= service.repository_info
