@@ -33,6 +33,11 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
   get '/auth/github/callback', to: 'users#update'
 
+  #####github invite
+  get '/invite', to: 'invitations#new'
+  post '/invite', to: 'invitations#create'
+  #####
+
   # Is this being used?
   get '/video', to: 'video#show'
 

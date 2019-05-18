@@ -1,5 +1,7 @@
 <h1> <%= facade.user.first_name %>'s Dashboard </h1>
-
+<% if facade.user.github_token %>
+  <%= link_to 'Invite a Friend!', '/invite', class: "btn btn-primary mb1 bg-teal" %>
+<% end %>
 <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
 <% if facade.user.github_token.nil? %>
   <%= button_to 'Connect to Github', '/auth/github', class: "btn btn-primary mb1 bg-teal" %>
