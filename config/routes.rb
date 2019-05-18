@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
   get '/auth/github/callback', to: 'users#update'
 
-  #####github invite
+  # ####github invite
   get '/invite', to: 'invitations#new'
   post '/invite', to: 'invitations#create'
   #####

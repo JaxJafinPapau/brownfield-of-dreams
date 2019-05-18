@@ -33,10 +33,10 @@ class UsersController < ApplicationController
     user = User.find_by(confirm_token: params[:token])
     if user
       user.email_activation
-      flash[:success] = "Thank you! Your account is now activated."
+      flash[:success] = 'Thank you! Your account is now activated.'
       redirect_to dashboard_path
     else
-      flash[:error] = "Something went wrong, please try again."
+      flash[:error] = 'Something went wrong, please try again.'
       redirect_to root_url
     end
   end

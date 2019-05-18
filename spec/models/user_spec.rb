@@ -31,7 +31,7 @@ RSpec.describe User, type: :model do
       expect(admin.admin?).to be_truthy
     end
 
-    it "user starts with nil github_token" do
+    it 'user starts with nil github_token' do
       user = create(:user)
 
       expect(user.github_token).to eq(nil)
@@ -39,14 +39,14 @@ RSpec.describe User, type: :model do
   end
 
   describe 'instance methods' do
-    it "email_activation" do
-      user = create(:user, confirm_token: "12345qwadflkawe", email_confirmed: "inactive")
+    it 'email_activation' do
+      user = create(:user, confirm_token: '12345qwadflkawe', email_confirmed: 'inactive')
 
-      expect(user.email_confirmed).to eq("inactive")
+      expect(user.email_confirmed).to eq('inactive')
 
       user.email_activation
 
-      expect(user.email_confirmed).to eq("active")
+      expect(user.email_confirmed).to eq('active')
       assert_nil(user.confirm_token)
     end
   end

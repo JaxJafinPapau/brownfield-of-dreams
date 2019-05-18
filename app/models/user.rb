@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def email_activation
-    self.email_confirmed = "active"
+    self.email_confirmed = 'active'
     self.confirm_token = nil
     save!(validate: false)
   end
@@ -25,9 +25,8 @@ class User < ApplicationRecord
   private
 
   def confirmation_token
-    if self.confirm_token.blank?
+    if confirm_token.blank?
       self.confirm_token = SecureRandom.urlsafe_base64.to_s
     end
   end
-
 end

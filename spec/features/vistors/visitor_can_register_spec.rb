@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'vister can create an account', :js do
@@ -7,7 +9,6 @@ describe 'vister can create an account', :js do
     last_name = 'Bob'
     password = 'password'
     password_confirmation = 'password'
-
 
     visit '/'
 
@@ -30,16 +31,16 @@ describe 'vister can create an account', :js do
     expect(current_path).to eq(dashboard_path)
 
     expect(page).to have_content("Logged in as: #{first_name} #{last_name}")
-    expect(page).to have_content("This account has not yet been activated. Please check your email.")
+    expect(page).to have_content('This account has not yet been activated. Please check your email.')
 
     user = User.last
-    user.update!(email_confirmed: "inactive", confirm_token: 123456)
+    user.update!(email_confirmed: 'inactive', confirm_token: 123_456)
 
     visit confirm_email_user_path(user.id, params: { token: user.confirm_token })
 
     expect(current_path).to eq(dashboard_path)
 
-    expect(page).to have_content("Thank you! Your account is now activated.")
+    expect(page).to have_content('Thank you! Your account is now activated.')
   end
 
   it 'cannot create non-unique email' do
@@ -49,7 +50,6 @@ describe 'vister can create an account', :js do
     last_name = 'Bob'
     password = 'password'
     password_confirmation = 'password'
-
 
     visit '/'
 
@@ -69,7 +69,6 @@ describe 'vister can create an account', :js do
 
     click_on'Create Account'
 
-    expect(page).to have_content("Email already exists")
-
+    expect(page).to have_content('Email already exists')
   end
 end
