@@ -12,9 +12,9 @@ attr_reader :user
   def partials
     {
       "inactive" => "inactive_dashboard",
-      "active"   => "active_dashboard"
+      "active" => "active_dashboard"
     }
-end
+  end
 
   def repositories(limit_index = 4)
     #can be refactored to
