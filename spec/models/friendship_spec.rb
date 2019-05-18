@@ -5,7 +5,7 @@ RSpec.describe Friendship do
     attributes = {
       user_id: 1,
       friended_user_id: 2
-      }
+    }
 
     friendship = Friendship.new(attributes)
     expect(friendship.user_id).to eq(1)

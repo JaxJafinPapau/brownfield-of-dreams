@@ -5,7 +5,7 @@ describe Follower do
     attributes = {
       login: "Stoovles",
       html_url: "https://github.com/Stoovles"
-      }
+    }
 
     repository = Follower.new(attributes)
     expect(repository.handle).to eq("Stoovles")

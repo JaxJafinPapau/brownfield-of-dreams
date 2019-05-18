@@ -5,7 +5,7 @@ describe Repository do
     attributes = {
       name: "Github Repo",
       html_url: "https://github.com/JaxJafinPapau/brownfield-of-dreams"
-      }
+    }
 
     repository = Repository.new(attributes)
     expect(repository.name).to eq("Github Repo")
