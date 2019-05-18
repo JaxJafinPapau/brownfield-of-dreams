@@ -7,3 +7,4 @@ AllCops:
     - 'script/**/**/*'
     - 'spec/**/**/*'
     - 'node_modules/**/*'
+    - 'lib/tasks/*'

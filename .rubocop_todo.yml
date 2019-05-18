@@ -33,14 +33,12 @@
 #     - 'spec/requests/api/v1/videos_request_spec.rb'
 
 # Offense count: 3
-Metrics/AbcSize:
-  Max: 20
 
 # Offense count: 14
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
-Metrics/BlockLength:
-  Max: 75
+# Metrics/BlockLength:
+#   Max: 75
 
 # Offense count: 1
 Metrics/CyclomaticComplexity:
@@ -144,3 +142,7 @@ Metrics/LineLength:
 Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'app/models/friendship.rb'
+
+#This will require a lot of refactoring using methods I'm not entirely sure about. For the sake of MVP this is last priority.
+Metrics/AbcSize:
+  Max: 20
