@@ -39,7 +39,6 @@ describe 'vister can create an account', :js do
 
     expect(current_path).to eq(dashboard_path)
 
-    visit dashboard_path
     expect(page).to have_content("Thank you! Your account is now activated.")
   end
 
@@ -72,5 +71,5 @@ describe 'vister can create an account', :js do
 
     expect(page).to have_content("Email already exists")
 
-  end 
+  end
 end
