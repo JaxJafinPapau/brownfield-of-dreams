@@ -18,19 +18,19 @@
 #     - 'app/services/github_service.rb'
 
 # Offense count: 23
-Lint/UselessAssignment:
-  Exclude:
-    - 'db/seeds.rb'
-    - 'spec/features/admin/admin_can_add_tags_to_tutorials_spec.rb'
-    - 'spec/features/user/user_can_bookmark_a_video_spec.rb'
-    - 'spec/features/user/user_can_log_in_and_out_spec.rb'
-    - 'spec/features/user/user_cannot_see_tutorial_spec.rb'
-    - 'spec/features/vistors/visitor_can_register_spec.rb'
-    - 'spec/features/vistors/visitor_is_asked_to_log_in_when_bookmarking_spec.rb'
-    - 'spec/features/vistors/visitor_sees_homepage_spec.rb'
-    - 'spec/presenters/tutorial_presenter_spec.rb'
-    - 'spec/requests/api/v1/tutorials_request_spec.rb'
-    - 'spec/requests/api/v1/videos_request_spec.rb'
+# Lint/UselessAssignment:
+#   Exclude:
+#     - 'db/seeds.rb'
+#     - 'spec/features/admin/admin_can_add_tags_to_tutorials_spec.rb'
+#     - 'spec/features/user/user_can_bookmark_a_video_spec.rb'
+#     - 'spec/features/user/user_can_log_in_and_out_spec.rb'
+#     - 'spec/features/user/user_cannot_see_tutorial_spec.rb'
+#     - 'spec/features/vistors/visitor_can_register_spec.rb'
+#     - 'spec/features/vistors/visitor_is_asked_to_log_in_when_bookmarking_spec.rb'
+#     - 'spec/features/vistors/visitor_sees_homepage_spec.rb'
+#     - 'spec/presenters/tutorial_presenter_spec.rb'
+#     - 'spec/requests/api/v1/tutorials_request_spec.rb'
+#     - 'spec/requests/api/v1/videos_request_spec.rb'
 
 # Offense count: 3
 Metrics/AbcSize:

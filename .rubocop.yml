@@ -4,4 +4,6 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
-    - 'script/**/*'
+    - 'script/**/**/*'
+    - 'spec/**/**/*'
+    - 'node_modules/**/*'
