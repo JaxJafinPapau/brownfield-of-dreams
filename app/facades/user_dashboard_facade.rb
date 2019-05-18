@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UserDashboardFacade
-attr_reader :user
+  attr_reader :user
 
   def initialize(user)
     @user = user
@@ -11,15 +13,15 @@ attr_reader :user
 
   def partials
     {
-      "inactive" => "inactive_dashboard",
-      "active"   => "active_dashboard"
+      'inactive' => 'inactive_dashboard',
+      'active' => 'active_dashboard'
     }
-end
+  end
 
   def repositories(limit_index = 4)
-    #can be refactored to
-    #take a parameter which determines
-    #how many repos to map
+    # can be refactored to
+    # take a parameter which determines
+    # how many repos to map
     repository_data[0..limit_index].map do |repository_data|
       Repository.new(repository_data)
     end
@@ -43,19 +45,22 @@ end
 
   private
 
-    def repository_data
-      @_repository_data ||= service.repository_info
-    end
+  # mike specifically told us to memoize in this fashion
+  # rubocop:disable Naming/MemoizedInstanceVariableName
+  def repository_data
+    @_repository_data ||= service.repository_info
+  end
 
-    def follower_data
-      @_follower_info ||= service.follower_info
-    end
+  def follower_data
+    @_follower_data ||= service.follower_info
+  end
 
-    def following_data
-      @_following_data ||= service.following_info
-    end
+  def following_data
+    @_following_data ||= service.following_info
+  end
 
-    def service
-      @_service ||= GithubService.new(@user.github_token)
-    end
+  def service
+    @_service ||= GithubService.new(@user.github_token)
+  end
+  # rubocop:enable Naming/MemoizedInstanceVariableName
 end

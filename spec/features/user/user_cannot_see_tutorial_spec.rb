@@ -20,7 +20,5 @@ describe 'A not logged-in user' do
 
     visit tutorial_path(tutorial)
     expect(current_path).to eq(root_path)
-
   end
-
 end

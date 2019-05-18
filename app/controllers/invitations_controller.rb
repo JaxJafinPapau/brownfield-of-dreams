@@ -1,21 +1,23 @@
-class InvitationsController < ApplicationController
-  def new
+# frozen_string_literal: true
 
-  end
+class InvitationsController < ApplicationController
+  def new; end
 
   def create
     if github_data[:email]
       github_email = github_data[:email]
       UserMailer.github_invite(current_user, github_email).deliver_now
-      flash[:notice] = "Successfully sent invite!"
+      flash[:notice] = 'Successfully sent invite!'
       redirect_to root_url
     else
-      flash[:notice] = "Github user does not exist or has a private email."
+      flash[:notice] = 'Github user does not exist or has a private email.'
       redirect_to '/invite'
     end
   end
 
   private
+
+  # rubocop:disable Naming/MemoizedInstanceVariableName
 
   def github_data
     @_github_data ||= service.github_info(params[:invitation][:github_handle])
@@ -24,6 +26,5 @@ class InvitationsController < ApplicationController
   def service
     @_service ||= GithubService.new
   end
-
-
+  # rubocop:enable Naming/MemoizedInstanceVariableName
 end

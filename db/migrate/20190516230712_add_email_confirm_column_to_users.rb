@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddEmailConfirmColumnToUsers < ActiveRecord::Migration[5.2]
   def change
     add_column :users, :email_confirmed, :integer, default: 0

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  # @user is much more explicit I think I'll keep this, tyvm rubocop
+  # rubocop:disable Naming/MemoizedInstanceVariableName
   def new
     @user ||= User.new
   end
@@ -20,4 +22,5 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+  # rubocop:enable Naming/MemoizedInstanceVariableName
 end
