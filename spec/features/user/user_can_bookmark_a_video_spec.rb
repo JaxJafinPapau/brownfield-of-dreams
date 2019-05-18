@@ -6,7 +6,7 @@ describe 'A registered user' do
   it 'can add videos to their bookmarks' do
     tutorial = create(:tutorial, title: 'How to Tie Your Shoes')
     video = create(:video, title: 'The Bunny Ears Technique', tutorial: tutorial)
-    user = create(:user)
+    user = create(:user, email_confirmed: 'active')
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

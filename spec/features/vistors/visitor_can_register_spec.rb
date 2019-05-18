@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'vister can create an account', :js do
-  xit ' visits the home page' do
+  it ' visits the home page' do
     email = 'jimbob@aol.com'
     first_name = 'Jim'
     last_name = 'Bob'
@@ -34,14 +34,40 @@ describe 'vister can create an account', :js do
 
     user = create(:user, email_confirmed: "inactive", confirm_token: 123456, email: "user3@example.com")
 
-    visit confirm_email_user_path(user.confirm_token)
+    visit confirm_email_user_path(user.id, params: { token: user.confirm_token })
 
     expect(current_path).to eq(dashboard_path)
 
+    expect(page).to have_content("Thank you! Your account is now activated.")
+  end
 
-    expect(page).to have_content(user.email)
-    expect(page).to have_content(user.first_name)
-    expect(page).to have_content(user.last_name)
-    expect(page).to_not have_content('Sign In')
+  it 'cannot create non-unique email' do
+    create(:user, email: 'jimbob@aol.com')
+    email = 'jimbob@aol.com'
+    first_name = 'Jim'
+    last_name = 'Bob'
+    password = 'password'
+    password_confirmation = 'password'
+
+
+    visit '/'
+
+    click_on 'Sign In'
+
+    expect(current_path).to eq(login_path)
+
+    click_on 'Sign up now.'
+
+    expect(current_path).to eq(new_user_path)
+
+    fill_in 'user[email]', with: email
+    fill_in 'user[first_name]', with: first_name
+    fill_in 'user[last_name]', with: last_name
+    fill_in 'user[password]', with: password
+    fill_in 'user[password_confirmation]', with: password
+
+    click_on'Create Account'
+
+    expect(page).to have_content("Email already exists")
   end
 end

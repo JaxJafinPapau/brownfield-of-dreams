@@ -131,5 +131,5 @@ test_tutorial = Tutorial.create! test_tutorial_data
 
 
 User.create!(email: 'admin@example.com', first_name: 'Bossy', last_name: 'McBosserton', password: 'password', role: :admin, github_token: ENV['GITHUB_API_KEY'], email_confirmed: 'active', confirm_token: nil)
-User.create!(email: 'user@example.com', first_name: 'Regular', last_name: 'User', password: 'password', role: :default, github_token: nil)
+User.create!(email: 'user@example.com', first_name: 'Regular', last_name: 'User', password: 'password', role: :default, github_token: nil, email_confirmed: 'active')
 User.create!(email: 'user2@example.com', first_name: 'Regular2', last_name: 'User2', password: 'password', role: :default, github_token: nil)
