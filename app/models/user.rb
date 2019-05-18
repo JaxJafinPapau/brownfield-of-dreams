@@ -25,8 +25,6 @@ class User < ApplicationRecord
   private
 
   def confirmation_token
-    if confirm_token.blank?
-      self.confirm_token = SecureRandom.urlsafe_base64.to_s
-    end
+    self.confirm_token = SecureRandom.urlsafe_base64.to_s if confirm_token.blank?
   end
 end

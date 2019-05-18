@@ -96,11 +96,11 @@
 
 # Offense count: 3
 # Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/models/user.rb'
-    - 'db/migrate/20180726193534_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
-    - 'db/migrate/20180726193535_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
+# Style/GuardClause:
+#   Exclude:
+#     - 'app/models/user.rb'
+#     - 'db/migrate/20180726193534_change_collation_for_tag_names.acts_as_taggable_on_engine.rb'
+#     - 'db/migrate/20180726193535_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 1
 Style/IfInsideElse:
