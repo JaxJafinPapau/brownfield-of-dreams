@@ -20,6 +20,7 @@ describe 'as a logged in User with github connected' do
       click_on 'Send Invite'
 
       expect(page).to have_content("Github user does not exist or has a private email.")
+
     end
   end
 end
