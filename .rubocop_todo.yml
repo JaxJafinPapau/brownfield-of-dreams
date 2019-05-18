@@ -65,22 +65,22 @@
 # Offense count: 1
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: snake_case, normalcase, non_integer
-Naming/VariableNumber:
-  Exclude:
-    - 'spec/features/user/user_cannot_see_tutorial_spec.rb'
+# Naming/VariableNumber:
+#   Exclude:
+#     - 'spec/features/user/user_cannot_see_tutorial_spec.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, EnforcedStyle.
 # SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/admin/base_controller.rb'
-    - 'app/controllers/admin/dashboard_controller.rb'
-    - 'app/controllers/admin/tutorials_controller.rb'
-    - 'app/controllers/admin/videos_controller.rb'
-    - 'app/controllers/api/v1/tutorials_controller.rb'
-    - 'app/controllers/api/v1/videos_controller.rb'
+# Style/ClassAndModuleChildren:
+#   Exclude:
+#     - 'app/controllers/admin/base_controller.rb'
+#     - 'app/controllers/admin/dashboard_controller.rb'
+#     - 'app/controllers/admin/tutorials_controller.rb'
+#     - 'app/controllers/admin/videos_controller.rb'
+#     - 'app/controllers/api/v1/tutorials_controller.rb'
+#     - 'app/controllers/api/v1/videos_controller.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.
