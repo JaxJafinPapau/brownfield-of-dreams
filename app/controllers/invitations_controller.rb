@@ -17,6 +17,8 @@ class InvitationsController < ApplicationController
 
   private
 
+  # rubocop:disable Naming/MemoizedInstanceVariableName
+
   def github_data
     @_github_data ||= service.github_info(params[:invitation][:github_handle])
   end
@@ -24,4 +26,5 @@ class InvitationsController < ApplicationController
   def service
     @_service ||= GithubService.new
   end
+  # rubocop:enable Naming/MemoizedInstanceVariableName
 end
