@@ -117,10 +117,10 @@
 #     - 'db/migrate/20180726193535_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 2
-Style/MixinUsage:
-  Exclude:
-    - 'bin/setup'
-    - 'bin/update'
+# Style/MixinUsage:
+#   Exclude:
+#     - 'bin/setup'
+#     - 'bin/update'
 
 # Offense count: 1
 # Cop supports --auto-correct.

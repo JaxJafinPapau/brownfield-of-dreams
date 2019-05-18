@@ -8,6 +8,7 @@ AllCops:
     - 'spec/**/**/*'
     - 'node_modules/**/*'
     - 'lib/tasks/*'
+    - 'bin/*'
 
 Style/ClassAndModuleChildren:
   Enabled: false
