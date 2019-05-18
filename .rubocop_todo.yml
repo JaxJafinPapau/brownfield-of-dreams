@@ -126,10 +126,10 @@
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, EnforcedStyle, IgnoredMethods.
 # SupportedStyles: predicate, comparison
-Style/NumericPredicate:
-  Exclude:
-    - 'spec/**/*'
-    - 'app/facades/tutorial_facade.rb'
+# Style/NumericPredicate:
+#   Exclude:
+#     - 'spec/**/*'
+#     - 'app/facades/tutorial_facade.rb'
 
 # Offense count: 84
 # Cop supports --auto-correct.
