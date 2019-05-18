@@ -7,9 +7,9 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-Lint/ShadowingOuterLocalVariable:
-  Exclude:
-    - 'app/services/tutorial_sequencer.rb'
+# Lint/ShadowingOuterLocalVariable:
+#   Exclude:
+#     - 'app/services/tutorial_sequencer.rb'
 
 # Offense count: 1
 # Configuration parameters: AllowKeywordBlockArguments.
@@ -139,3 +139,8 @@ Style/NumericPredicate:
 # URISchemes: http, https
 Metrics/LineLength:
   Max: 207
+
+#This has been left because if you correct to add an empty line rubocop throws a 'trailing whitespace detected'
+Layout/EmptyLineAfterGuardClause:
+  Exclude:
+    - 'app/models/friendship.rb'
