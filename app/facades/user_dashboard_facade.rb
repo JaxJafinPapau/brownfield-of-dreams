@@ -45,12 +45,14 @@ class UserDashboardFacade
 
   private
 
+  #mike specifically told us to memoize in this fashion
+  # rubocop:disable Naming/MemoizedInstanceVariableName
   def repository_data
     @_repository_data ||= service.repository_info
   end
 
   def follower_data
-    @_follower_info ||= service.follower_info
+    @_follower_data ||= service.follower_info
   end
 
   def following_data
@@ -60,4 +62,5 @@ class UserDashboardFacade
   def service
     @_service ||= GithubService.new(@user.github_token)
   end
+  # rubocop:enable Naming/MemoizedInstanceVariableName
 end

@@ -41,26 +41,26 @@
 #   Max: 75
 
 # Offense count: 1
-Metrics/CyclomaticComplexity:
-  Max: 8
+# Metrics/CyclomaticComplexity:
+#   Max: 8
 
 # Offense count: 2
 # Configuration parameters: CountComments, ExcludedMethods.
-Metrics/MethodLength:
-  Max: 12
+# Metrics/MethodLength:
+#   Max: 12
 
 # Offense count: 1
-Metrics/PerceivedComplexity:
-  Max: 8
+# Metrics/PerceivedComplexity:
+#   Max: 8
 
 # Offense count: 7
 # Configuration parameters: EnforcedStyleForLeadingUnderscores.
 # SupportedStylesForLeadingUnderscores: disallowed, required, optional
-Naming/MemoizedInstanceVariableName:
-  Exclude:
-    - 'app/controllers/invitations_controller.rb'
-    - 'app/controllers/sessions_controller.rb'
-    - 'app/facades/user_dashboard_facade.rb'
+# Naming/MemoizedInstanceVariableName:
+#   Exclude:
+#     - 'app/controllers/invitations_controller.rb'
+#     - 'app/controllers/sessions_controller.rb'
+#     - 'app/facades/user_dashboard_facade.rb'
 
 # Offense count: 1
 # Configuration parameters: EnforcedStyle.
