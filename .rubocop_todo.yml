@@ -135,14 +135,15 @@
 # Cop supports --auto-correct.
 # Configuration parameters: AutoCorrect, AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Metrics/LineLength:
-  Max: 207
 
 #This has been left because if you correct to add an empty line rubocop throws a 'trailing whitespace detected'
 Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'app/models/friendship.rb'
 
-#This will require a lot of refactoring using methods I'm not entirely sure about. For the sake of MVP this is last priority.
+#These are arbitrary and apply to many files which have multiple long but explicit db attribute names making for longer but clearer lines
 Metrics/AbcSize:
   Max: 20
+
+  Metrics/LineLength:
+    Max: 207
