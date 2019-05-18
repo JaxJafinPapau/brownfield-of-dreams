@@ -91,8 +91,8 @@
 #     - 'app/controllers/welcome_controller.rb'
 
 # Offense count: 43
-Style/Documentation:
-  Enabled: false
+# Style/Documentation:
+#   Enabled: false
 
 # Offense count: 3
 # Configuration parameters: MinBodyLength.
