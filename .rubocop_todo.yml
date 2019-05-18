@@ -103,9 +103,9 @@
 #     - 'db/migrate/20180726193535_add_missing_indexes_on_taggings.acts_as_taggable_on_engine.rb'
 
 # Offense count: 1
-Style/IfInsideElse:
-  Exclude:
-    - 'app/controllers/welcome_controller.rb'
+# Style/IfInsideElse:
+#   Exclude:
+#     - 'app/controllers/welcome_controller.rb'
 
 # Offense count: 5
 # Cop supports --auto-correct.
