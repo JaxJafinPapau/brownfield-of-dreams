@@ -1,18 +1,10 @@
 # Brownfield Of Dreams
 
-This is the base repo for a brownfield project used at Turing for Backend Mod 3.
-
 Project Spec and Evaluation Rubric: https://github.com/turingschool-examples/brownfield-of-dreams
-
-### Project Board
-
-Students will continue to build on the existing code base using the cards within the following Github Project: https://github.com/turingschool-examples/brownfield-of-dreams/projects/1
 
 **Learning Goals and Labels**
 
-The cards are labeled in a way that correspond to learning goals or to specific areas you might personally want to focus on.
-
-Cards should be completed from top to bottom in the To Do column. Cards labeled `good first issue` are good as filler work and will allow you to practice common Rails skills.
+Learning goals for this project focused on lessening technical debt in an existing project. At inception the project has many objects which serve no purpose, testing coverage is less than 30%, and over 1200 exceptions thrown by the linting tool RuboCop. 
 
 ### About the Project
 
